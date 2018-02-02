@@ -1,0 +1,9 @@
+{
+  "mysql":{
+    "mysql_host":"192.168.0.68",
+    "mysql_user":"gaomei",
+    "mysql_password":"gaomei",
+    "mysql_port":3306,
+    "mysql_database":"Lookat"
+  }
+}
