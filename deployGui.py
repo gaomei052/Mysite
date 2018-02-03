@@ -16,4 +16,12 @@ from login import Load
 def Deploy():
     top = Tk()
     top.title("DeployGUI")
+    Label(top,text='Project').grid(row=5,column=0)
+    ProjectName = StringVar()
+    Project = Entry(top,textvariable=ProjectName)
+    Project.grid(row=5,column=1,columnspan=2)
+    Label(top,text='App').grid(row=10,column=0)
+    AppName = StringVar()
+    App = Entry(top,textvariable=AppName)
+    App.grid(row=10,column=1,columnspan=2)
     top.mainloop()
