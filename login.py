@@ -7,7 +7,7 @@
 # @Software : PyCharm
 # @Email    : gaomei052@gmail.com
 
-from databaseLoad import Load
+from modules.databaseLoad import Load
 
 class Login(object):
     def __init__(self,username,password):

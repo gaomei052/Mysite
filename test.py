@@ -8,7 +8,7 @@
 # @Email    : gaomei052@gmail.com
 
 
-import databaseLoad
+from modules import databaseLoad
 
 a = databaseLoad.Load()
 #a.run("insert into l_user(name,password,permission) value ('gaomei',password('gaomei'),0),('test1',password('gaomei'),1),('test2',password('gaomei'),2),('test3',password('gaomei'),3);")
@@ -19,3 +19,4 @@ a = databaseLoad.Load()
  #                           password varchar(255) not null,\
     #                        privateKey text,\
  #                           publicKey text);")
+print a.run("select hostname from l_host;")

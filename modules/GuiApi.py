@@ -31,19 +31,26 @@ class gui(object):
             B.grid(row=row, column=column)
         return B
 
-    def Lable(self,name,row,column,columnspan):
+    def Lable(self,name,row,column,columnspan=None):
         L = Label(self.top,text=name)
-        L.grid(row=row,column=column,columnspan=columnspan)
+        if columnspan:
+            L.grid(row=row,column=column)
+        else:
+            L.grid(row=row,column=column,columnspan=columnspan)
         return L
 
-    def Entry(self,row,column,columnspan,show,default):
-        V = StringVar()
-        E = Entry(self.top,textvariable=V)
-        E.grid(row=row,column=column,columnspan=columnspan)
+    def Entry(self,row,column,show=None,default=None,columnspan=None):
+        self.V = StringVar(self.top)
+        E = Entry(self.top,textvariable=self.V)
+        if columnspan:
+            E.grid(row=row, column=column)
+        else:
+            E.grid(row=row,column=column,columnspan=columnspan)
         if show:
             E['show'] = show
         if default:
-            V.set(default)
-        result = V.get()
-        return result
+            self.V.set(default)
+        return self.V
+
+
 
