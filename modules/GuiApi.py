@@ -63,7 +63,7 @@ class gui(object):
         return self.V
 
     def message(self,title,msg):
-        Mtop = Tk()
+        top = Tk()
         top.title(title)
 
         Message(top,text=msg).grid()
