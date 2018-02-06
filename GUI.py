@@ -34,9 +34,10 @@ def main(user,password):
             tkMessageBox.showinfo(title='Permission Error',message="You don't have access.")
 
 
-    G = gui()
+    G = gui('Center Manage')
     G.Button('Deploy',onLine,0,0,width=15)
     G.Button("Assets Messagement",ass,1,0,width=15)
+    G.loop()
 
     #tk = Tk()
     #tk.title("Contorl Center")
@@ -56,22 +57,15 @@ def login():
 
     def verifUserEvent(event):
         verifUser()
-    top = Tk()
-    top.title("Login")
-    Label(top,text='User').grid(row=0,column=0)
-    user = StringVar()
-    Entry(top,textvariable=user).grid(row=0,column=1,columnspan=2)
-    Label(top,text='Password').grid(row=1,column=0)
-    password = StringVar()
-    passwd = Entry(top,textvariable=password)
-    passwd.grid(row=1,column=1,columnspan=2)
-    passwd['show'] = "*"
-    passwd.bind('<Return>',verifUserEvent)
-    Button(top,text='Exit',command=quit).grid(row=2,column=0)
-    Button(top,text='Login',command=verifUser).grid(row=2,column=2)
-    top.mainloop()
 
-
+    G = gui('Login')
+    G.Lable('User',0,0)
+    user = G.Entry(0,1,columnspan=2)
+    G.Lable('Password',1,0)
+    password = G.Entry(1,1,show='*',columnspan=2,key='<Return>',fun=verifUserEvent)
+    G.Button('Exit',quit,2,0)
+    G.Button('Login',verifUser,2,1)
+    G.loop()
 
 
 if __name__ == '__main__':
