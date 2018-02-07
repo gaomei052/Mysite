@@ -20,3 +20,6 @@ a.run("insert into l_user(name,password,permission) value ('gaomei',password('ga
 #                            privateKey text,\
 #                            publicKey text,\
 #                            sshport int not null);")
+
+
+a.close()

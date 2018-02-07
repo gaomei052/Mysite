@@ -10,17 +10,24 @@
 import paramiko
 
 class ssh():
-    def __init__(self,hostname,Port=22,password=None,privKey=None):
-        self.host = hostname
-        self.port = Port
-        self.password = password
-        self.privkey = privKey
-        self.tran = paramiko.Transport((self.host,self.port))
-        if self.password:
-            self.tran.connect(username='root',password=self.password)
-        elif self.privkey:
-            priv = paramiko.RSAKey.from_private_key(self.privkey)
-            self.tran.connect(username='root',pkey=priv)
+    def __init__(self,hostname=None,Port=22,password=None,privKey=None):
+        try:
+            self.host = hostname
+            self.port = Port
+            self.password = password
+            self.privkey = privKey
+            if self.port:
+                self.port = 22
+            self.tran = paramiko.Transport((self.host,self.port))
+            if self.password:
+                self.tran.connect(username='root',password=self.password)
+            elif self.privkey:
+                priv = paramiko.RSAKey.from_private_key(self.privkey)
+                self.tran.connect(username='root',pkey=priv)
+            self.sftp = paramiko.SFTPClient.from_transport(self.tran)
+            self.ssh = paramiko.SSHClient()
+        except:
+            pass
 
 
 
@@ -31,26 +38,35 @@ class ssh():
             return 0
 
     def run(self,command):
-        ssh = paramiko.SSHClient()
-        ssh._transport = self.tran
-        i,o,e = ssh.exec_command(command)
-        ssh.close()
-        return (o.read(),e.read())
+        try:
+            self.ssh._transport = self.tran
+            i,o,e = self.ssh.exec_command(command)
+            return (o.read(),e.read())
+        except:
+            return 0
 
     def tranFile(self,method,src,dest):
-        sftp = paramiko.SFTPClient.from_transport(self.tran)
         try:
             if method == 'put':
-                sftp.put(src,dest)
+                self.sftp.put(src,dest)
             if method == 'get':
-                sftp.get(src,dest)
+                self.sftp.get(src,dest)
         except Exception as e:
             return e
 
+    def test(self):
+        try:
+            if self.run(''):
+                return 1
+            else:
+                return 0
+        except:
+            return 0
+
     def result(self):
-        self.tran.close()
-
-
-
-
-
+        try:
+            self.ssh.close()
+            self.sftp.close()
+            self.tran.close()
+        except:
+            return 0

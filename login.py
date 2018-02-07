@@ -21,16 +21,17 @@ class Login(object):
             passA = self.conn.run("select password from l_user where name='%s'" %self.user)
             passB = self.conn.run("select password('%s');" %self.password)
             if passA == passB:
-                self.conn.close()
                 return 1
             else:
-                self.conn.close()
                 return 0
         else:
-            self.conn.close()
             return "Without the user."
+
 
     def permissionValue(self):
         per = self.conn.run("select permission from l_user where name='%s'" %self.user)
         return per[0][0]
+
+    def close(self):
+        self.conn.close()
 

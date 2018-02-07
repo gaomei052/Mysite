@@ -21,18 +21,21 @@ warnings.filterwarnings('ignore')
 
 
 def main(user,password):
+
     def onLine():
-        if Login(user,password).permissionValue() <= 1:
+        sql = Login(user, password)
+        if sql.permissionValue() <= 1:
             Deploy()
         else:
             tkMessageBox.showinfo(title='Permission Error',message="You don't have access.")
-
+        sql.close()
     def ass():
-        if Login(user,password).permissionValue() < 1:
+        sql = Login(user, password)
+        if sql.permissionValue() < 1:
             assetsManagement.asset()
         else:
             tkMessageBox.showinfo(title='Permission Error',message="You don't have access.")
-
+        sql.close()
 
     G = gui('Center Manage')
     G.Button('Deploy',onLine,0,0,width=15)
@@ -54,6 +57,7 @@ def login():
             main(user.get(),password.get())
         else:
             tkMessageBox.showinfo(title="Error", message="User or password is wrong")
+        l.close()
 
     def verifUserEvent(event):
         verifUser()
