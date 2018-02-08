@@ -11,6 +11,7 @@ from modules.GuiApi import gui
 from modules.secretKeyGen import genRsa
 from modules.databaseLoad import Load
 from modules.sshapi import ssh
+from searchHost import showhost
 import tkMessageBox
 import re
 import os
@@ -20,7 +21,7 @@ returnline = os.linesep
 
 def asset():
     def com():
-        if verificationIP():
+        if not verificationIP():
             tkMessageBox.showerror('Error', 'Format example(192.168.0.55)')
             return 0
         pubkey,privkey = genRsa()
@@ -41,26 +42,30 @@ def asset():
                             % (password.get(), IP.get()))
         sql.close()
 
-
-
     def showhost():
+        def search(event):
+            sql = Load()
+            host = sql.run("select hostname,sshport from l_host where hostname='%s';" \
+                           % IP.get())
+            M = gui('Host List')
+            M.treeview(('IP', 200), ('Port', 70), ipady=87)
+            sql = Load()
+            sql.close()
+            for i in host:
+                M.insert(i)
+            M.loop()
+        M = gui('Host List')
+        M.Lable("IP Search", 0, 0)
+        IP = M.Entry(1, 0, ipadx=40,key='<Return>',fun=search)
+        M.treeview(('IP', 200), ('Port', 70),ipady=87)
         sql = Load()
-        host = sql.run("select hostname,sshport from l_host;")
-        hostlist = []
-        for i in host:
-
-            hostlist.append(i)
-
-        def listWork(hostlist):
-            a = re.sub(r'\(','',str(hostlist))
-            b = re.sub(r'\)',returnline,a)
-            c = re.sub(r',','',b)
-            d = re.sub(r'\'','\t',c)
-            return re.sub(r'\[|\]',returnline,d)
+        hostname = sql.run("select hostname,sshport from l_host;")
         sql.close()
+        for i in hostname:
+            M.insert(i)
+        M.loop()
 
-        #tkMessageBox.showinfo('HostList',listWork(hostlist))
-        G.message('Host',listWork(hostlist))
+
 
     def test():
         A = ssh(hostname=IP.get(), Port=Port.get(), password=password.get())
