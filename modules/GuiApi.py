@@ -153,6 +153,10 @@ class gui(object):
         items = self.treeview.get_children()
         [self.treeview.delete(item) for item in items]
 
+    @property
+    def quit(self):
+        return self.top.quit
+
 
     def loop(self, master=None):
         if master:

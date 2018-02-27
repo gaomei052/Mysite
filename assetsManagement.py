@@ -20,6 +20,7 @@ reg = re.compile(r'(\d{1,3}\.){3}\d{1,3}')
 returnline = os.linesep
 
 table = 'l_host'
+table2 = 'l_project'
 
 def asset():
     def com():
@@ -92,7 +93,7 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
                                  python_version,i[0]))
             hostname = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
                   system_kide,machine,memory,shell,kernel,pkg_message,\
-                  python_version from l_host;")
+                  python_version,Project from l_host;")
 
             for i in hostname:
                 M.insert(i)
@@ -148,6 +149,40 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
         if not res:
             tkMessageBox.showerror('Error', 'Format example(192.168.0.55)')
 
+    def JoinApp():
+        def OK():
+            sql = Load()
+            try:
+                sql.run("insert into %s(project,app) values ('%s','%s')" \
+                        %(table2,projectname.get(),appname.get()) )
+            except:
+                a = tkMessageBox.askokcancel(title=None, message= \
+                    "Host is exist,(Ok) is go on,(Cancel) is return!")
+                if a:
+                    sql.run("update %s set app='%s' where project=%s" \
+                            %(table2,appname.get(),projectname.get()))
+
+            sql.close()
+        def show():
+            sql = Load()
+            pro = sql.run("select * from %s;" % table2)
+            sql.close()
+            T = gui("Show App")
+            T.treeview(('Project',80),('App',200),ipady=87)
+            for i in pro:
+                T.insert(i)
+            T.loop()
+        proj = Project.get()
+        a = proj.split(',')
+        M = gui('Append App')
+        M.Lable('Project',10,0)
+        projectname = M.combobox(10,1,values=a)
+        M.Lable('App',15,0)
+        appname = M.Entry(15,1)
+        M.Button('OK',OK,20,1,columnspan=2)
+        M.Button('Show',show,20,0)
+        M.loop()
+
     G = gui("Assets Management")
     G.Lable('HostName',5,0)
     IP = G.Entry(5,1,key='<Tab>',fun=verifip)
@@ -157,6 +192,7 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
     Port = G.Entry(11,1,key='<Button-1>',fun=verifip)
     G.Lable('Project',12,0)
     Project = G.Entry(12,1)
+    G.Button('...',JoinApp,12,2)
     G.Button('Join',com,15,2)
     G.Button('ShowHosts',showhost,15,0)
     G.Button('Connect Test',test,15,1)

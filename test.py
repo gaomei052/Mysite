@@ -32,8 +32,10 @@ a = databaseLoad.Load()
 #                            python_version char(10);")
 
 #print a.run("select hostname from l_host;")
-b =  a.run('select IP from l_host where IP="192.168.0.33";')
-print b
+#b =  a.run('select IP from l_host where IP="192.168.0.33";')
+#print b
 #for i in b:
 #    print i[0]
+a.run("create table l_project(project char(40) not null unique key,\
+app varchar(255))")
 a.close()
