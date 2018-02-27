@@ -12,7 +12,8 @@ from modules.GuiApi import gui
 def Deploy():
     G = gui('Deploy')
     G.Lable('Project',5,0)
-    ProName = G.Entry(5,1,columnspan=2)
+    ProName = G.combobox(5,1,width=24,values=[1,2,3,4])
+   # ProName = G.Entry(5,1,columnspan=2)
     G.Lable('App',10,0)
     AppName = G.Entry(10,1,columnspan=2)
     G.loop()

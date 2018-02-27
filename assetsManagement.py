@@ -11,13 +11,15 @@ from modules.GuiApi import gui
 from modules.secretKeyGen import genRsa
 from modules.databaseLoad import Load
 from modules.sshapi import ssh
-from searchHost import showhost
+from modules.ansible_api import command
 import tkMessageBox
 import re
 import os
 
 reg = re.compile(r'(\d{1,3}\.){3}\d{1,3}')
 returnline = os.linesep
+
+table = 'l_host'
 
 def asset():
     def com():
@@ -27,45 +29,88 @@ def asset():
         pubkey,privkey = genRsa()
         sql = Load()
         try:
-            sql.run("insert into l_host(hostname,password,privateKey,publicKey,sshport) value (\
-                '%s',password('%s'),'%s','%s',%d)" %(IP.get(),password.get(),str(privkey)\
+            sql.run("insert into l_host(IP,password,privateKey,publicKey,sshport) value (\
+                '%s','%s','%s','%s',%d)" %(IP.get(),password.get(),str(privkey)\
                                                   ,str(pubkey),int(Port.get())))
         except:
             a = tkMessageBox.askokcancel(title=None,message=\
                 "Host is exist,(Ok) is go on,(Cancel) is return!")
             if a:
                 if Port.get():
-                    sql.run("update l_host set sshport=%d where hostname='%s'"
+                    sql.run("update l_host set sshport=%d where IP='%s'"
                              %(int(Port.get()),IP.get()))
                 if password.get():
-                    sql.run("update l_host set password='%s' where hostname='%s'"
+                    sql.run("update l_host set password='%s' where IP='%s'"
                             % (password.get(), IP.get()))
         sql.close()
 
     def showhost():
         def search(event):
             sql = Load()
-            host = sql.run("select hostname,sshport from l_host where hostname='%s';" \
+            host = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
+                  system_kide,machine,memory,shell,kernel,pkg_message,\
+                  python_version from l_host where IP='%s';" \
                            % IP.get())
             M = gui('Host List')
-            M.treeview(('IP', 200), ('Port', 70), ipady=87)
+            M.treeview(('IP', 100), ('Port', 30),('HostName',100),('CPU_count',70),('CPU_core',70),('System_Kide',90),\
+                   ('machine',70),('Memory',50),('shell',80),('kernel',150),('pkg_Message','90'),\
+                   ('python_Version',90),ipady=87)
             sql = Load()
             sql.close()
             for i in host:
                 M.insert(i)
             M.loop()
+
+        def update():
+            M.clear()
+            sql = Load()
+            host = sql.run("select IP,password,sshport from l_host;")
+            for i in host:
+                com = command(host=[i[0]],password=i[1],port=i[2],module='setup')
+                data = com.hostMessage()
+                hostname = data['hostname']
+                cpu_count = data['cpu_cont']
+                cpu_core = data['cpu_core']
+                system_kide = data['systemKide']
+                machine = data['machine']
+                memory = data['memory']
+                shell = data['shell']
+                kernel = data['kernel']
+                pkg_message = data['pkg_Message']
+                python_version = data['python_version']
+
+
+                sql.run('update %s set hostname="%s",cpu_count=%d,cpu_core=%d,\
+system_kide="%s",machine="%s",memory=%d,shell="%s",kernel="%s",pkg_message="%s",\
+python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_kide,\
+                                 machine,memory,shell,kernel,pkg_message,\
+                                 python_version,i[0]))
+            hostname = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
+                  system_kide,machine,memory,shell,kernel,pkg_message,\
+                  python_version from l_host;")
+
+            for i in hostname:
+                M.insert(i)
+            sql.close()
+
+
         M = gui('Host List')
         M.Lable("IP Search", 0, 0)
         IP = M.Entry(1, 0, ipadx=40,key='<Return>',fun=search)
-        M.treeview(('IP', 200), ('Port', 70),ipady=87)
+        M.Button('Update',update,2,0,width=30)
+        M.treeview(('IP', 100), ('Port', 30),('HostName',100),('CPU_count',70),('CPU_core',70),('System_Kide',90),\
+                   ('machine',70),('Memory',50),('shell',80),('kernel',150),('pkg_Message','90'),\
+                   ('python_Version',90),ipady=87)
         sql = Load()
-        hostname = sql.run("select hostname,sshport from l_host;")
+        hostname = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
+                  system_kide,machine,memory,shell,kernel,pkg_message,\
+                  python_version from l_host;")
         sql.close()
+
         for i in hostname:
+
             M.insert(i)
         M.loop()
-
-
 
     def test():
         A = ssh(hostname=IP.get(), Port=Port.get(), password=password.get())

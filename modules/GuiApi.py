@@ -71,6 +71,21 @@ class gui(object):
             E.bind(key, fun)
         return self.V
 
+    def combobox(self,row,column,width=None,values=None,key=None,fun=None):
+        width = width or 20
+        values = values or ''
+        data = StringVar(self.top)
+        com = ttk.Combobox(self.top,width=width,textvariable=data)
+        com['values'] = values
+        com.current(None)
+        com.grid(row=row,column=column)
+        if key and fun:
+            com.bind(key,fun)
+
+        return data
+
+
+
     def message(self, title, msg):
         top = Tk()
         top.title(title)
@@ -128,9 +143,16 @@ class gui(object):
 
         self.treeview.bind('<Button-1>', com)
 
+
+
     def insert(self, *args):
         for i in args:
             self.treeview.insert('', 0, values=i)
+
+    def clear(self):
+        items = self.treeview.get_children()
+        [self.treeview.delete(item) for item in items]
+
 
     def loop(self, master=None):
         if master:

@@ -15,12 +15,24 @@ a = databaseLoad.Load()
 #a.run("create table l_user(id int not null primary key auto_increment,name char(20) not null unique key,password varchar(255) not null,permission int);")
 #print a.run("select permission from l_user where name='gaomei'")[0][0]
 #a.run("create table l_host(id int not null primary key auto_increment,\
-#                            hostname varchar(255) not null unique key,\
+#                            IP varchar(255) not null unique key,\
 #                            password varchar(255) not null,\
 #                            privateKey text,\
 #                            publicKey text,\
-#                            sshport int not null);")
+#                            sshport int not null,\
+#                            hostname varchar(255),\
+#                            cpu_count int,\
+#                            cpu_core int,\
+#                            system_kide VARCHAR(255),\
+#                            machine CHAR(40),\
+#                            memory int,\
+#                            shell VARCHAR(255),\
+#                            kernel VARCHAR(255),\
+#                            pkg_message char(40),\
+#                            python_version char(10);")
 
-print a.run("select hostname from l_host;")
-
+#print a.run("select hostname from l_host;")
+b =  a.run('select IP,password,sshport from l_host;')
+for i in b:
+    print i[0]
 a.close()
