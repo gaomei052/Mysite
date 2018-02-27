@@ -29,19 +29,23 @@ def asset():
         pubkey,privkey = genRsa()
         sql = Load()
         try:
-            sql.run("insert into l_host(IP,password,privateKey,publicKey,sshport) value (\
-                '%s','%s','%s','%s',%d)" %(IP.get(),password.get(),str(privkey)\
-                                                  ,str(pubkey),int(Port.get())))
+            sql.run("insert into l_host(IP,password,privateKey,publicKey,sshport,Project) value (\
+                '%s','%s','%s','%s',%d,'%s')" %(IP.get(),password.get(),str(privkey)\
+                                                  ,str(pubkey),int(Port.get()),\
+                                                                   str(Project.get())))
         except:
             a = tkMessageBox.askokcancel(title=None,message=\
                 "Host is exist,(Ok) is go on,(Cancel) is return!")
             if a:
                 if Port.get():
-                    sql.run("update l_host set sshport=%d where IP='%s'"
-                             %(int(Port.get()),IP.get()))
+                    sql.run("update %s set sshport=%d where IP='%s'"
+                             %(table,int(Port.get()),IP.get()))
                 if password.get():
-                    sql.run("update l_host set password='%s' where IP='%s'"
-                            % (password.get(), IP.get()))
+                    sql.run("update %s set password='%s' where IP='%s'"
+                            % (table,password.get(), IP.get()))
+                if Project.get():
+                    sql.run("update %s set Project='%s' where IP='%s'" \
+                            %(table,Project.get(),IP.get()))
         sql.close()
 
     def showhost():
@@ -49,12 +53,12 @@ def asset():
             sql = Load()
             host = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
                   system_kide,machine,memory,shell,kernel,pkg_message,\
-                  python_version from l_host where IP='%s';" \
-                           % IP.get())
+                  python_version,Project from %s where IP='%s';" \
+                           %(table,IP.get()))
             M = gui('Host List')
             M.treeview(('IP', 100), ('Port', 30),('HostName',100),('CPU_count',70),('CPU_core',70),('System_Kide',90),\
                    ('machine',70),('Memory',50),('shell',80),('kernel',150),('pkg_Message','90'),\
-                   ('python_Version',90),ipady=87)
+                   ('python_Version',90),('Project',150),ipady=87)
             sql = Load()
             sql.close()
             for i in host:
@@ -80,6 +84,7 @@ def asset():
                 python_version = data['python_version']
 
 
+
                 sql.run('update %s set hostname="%s",cpu_count=%d,cpu_core=%d,\
 system_kide="%s",machine="%s",memory=%d,shell="%s",kernel="%s",pkg_message="%s",\
 python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_kide,\
@@ -100,11 +105,11 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
         M.Button('Update',update,2,0,width=30)
         M.treeview(('IP', 100), ('Port', 30),('HostName',100),('CPU_count',70),('CPU_core',70),('System_Kide',90),\
                    ('machine',70),('Memory',50),('shell',80),('kernel',150),('pkg_Message','90'),\
-                   ('python_Version',90),ipady=87)
+                   ('python_Version',90),('Project',150),ipady=87)
         sql = Load()
         hostname = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
                   system_kide,machine,memory,shell,kernel,pkg_message,\
-                  python_version from l_host;")
+                  python_version,Project from l_host;")
         sql.close()
 
         for i in hostname:
@@ -150,6 +155,8 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
     password = G.Entry(10,1,key='<Button-1>',fun=verifip)
     G.Lable('Port',11,0)
     Port = G.Entry(11,1,key='<Button-1>',fun=verifip)
+    G.Lable('Project',12,0)
+    Project = G.Entry(12,1)
     G.Button('Join',com,15,2)
     G.Button('ShowHosts',showhost,15,0)
     G.Button('Connect Test',test,15,1)

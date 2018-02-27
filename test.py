@@ -32,7 +32,8 @@ a = databaseLoad.Load()
 #                            python_version char(10);")
 
 #print a.run("select hostname from l_host;")
-b =  a.run('select IP,password,sshport from l_host;')
-for i in b:
-    print i[0]
+b =  a.run('select IP from l_host where IP="192.168.0.33";')
+print b
+#for i in b:
+#    print i[0]
 a.close()
