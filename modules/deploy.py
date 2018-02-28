@@ -18,7 +18,7 @@ class DeployProject:
         #self.sql = Load()
         pass
     @property
-    def ProjectName(self):
+    def _ProjectName(self):
         sql = Load()
         project = sql.run('select Project from l_host;')
         sql.close()
@@ -32,17 +32,33 @@ class DeployProject:
                 pass
         return proList
 
-    def Appname(self,Project):
+    @property
+    def _Appname(self):
         sql = Load()
-        appname = sql.run("select app from %s where project='%s'" %(table,Project))
+        appname = sql.run("select project,app from %s;" %(table))
         sql.close()
-        appList = []
+        appdict = {}
         for i in appname:
             if i[0]:
-                for j in i:
-                    for m in j.split(','):
-                        appList.append('%s' %m)
+                m,n = i
+                appdict[m] = n
+        return appdict
+
+    @property
+    def dict(self):
+        proname = self._ProjectName
+        appname = self._Appname
+        prod = {}
+        for i in proname:
+            if i in appname.keys():
+                prod[i] = appname[i]
             else:
-                pass
-        return appList
-print DeployProject().Appname('token')
+                prod[i] = i
+        return prod
+
+    def app(self,project):
+        return self.dict[project]
+
+
+#print DeployProject().dict
+

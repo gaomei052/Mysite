@@ -36,6 +36,9 @@ a = databaseLoad.Load()
 #print b
 #for i in b:
 #    print i[0]
-a.run("create table l_project(project char(40) not null unique key,\
-app varchar(255))")
+#a.run("create table l_project(project char(40) not null unique key,\
+#app varchar(255))")
+a.run("create table l_gitlab(Address VARCHAR(255) not null,\
+Token VARCHAR(255) not null,user char(40) not null,password char(40) not null);")
+#print a.run("select project,app from l_project;")
 a.close()

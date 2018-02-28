@@ -71,18 +71,21 @@ class gui(object):
             E.bind(key, fun)
         return self.V
 
-    def combobox(self,row,column,width=None,values=None,key=None,fun=None):
+    def combobox(self,row,column,width=None,values=None,key=None,fun=None,default=None):
         width = width or 20
         values = values or ''
         data = StringVar(self.top)
-        com = ttk.Combobox(self.top,width=width,textvariable=data)
-        com['values'] = values
-        com.current(None)
-        com.grid(row=row,column=column)
+        self.com = ttk.Combobox(self.top,width=width,textvariable=data)
+        self.com.grid(row=row,column=column)
         if key and fun:
-            com.bind(key,fun)
+            self.com.bind(key,fun)
+        self.com['values'] = values
+        self.com.current(default)
 
         return data
+
+    def values(self,values):
+        self.com['values'] = values
 
 
 
@@ -93,7 +96,8 @@ class gui(object):
         Message(top, text=msg).grid()
         self.loop(master=top)
 
-    def treeview(self, *args, **kwargs):
+
+    def treeview(self,*args, **kwargs):
         self.frame.grid()
         scrollBar = Scrollbar(self.frame)
         if 'ipady' in kwargs.keys():
@@ -137,13 +141,13 @@ class gui(object):
         self.treeview.grid(row=10,column=0, sticky=W, rowspan=10)
         scrollBar.config(command=self.treeview.yview)
 
-
-        def com(event):
-            pass
-
-        self.treeview.bind('<Button-1>', com)
+        if 'Eve' in kwargs.keys():
+            self.treeview.bind('<Double-Button-1>',kwargs['Eve'])
 
 
+    def Even(self):
+        a = self.treeview.focus()
+        return self.treeview.item(a)
 
     def insert(self, *args):
         for i in args:
@@ -152,10 +156,6 @@ class gui(object):
     def clear(self):
         items = self.treeview.get_children()
         [self.treeview.delete(item) for item in items]
-
-    @property
-    def quit(self):
-        return self.top.quit
 
 
     def loop(self, master=None):
