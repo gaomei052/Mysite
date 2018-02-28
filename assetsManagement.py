@@ -100,10 +100,46 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
             sql.close()
 
         def cod(event):
+            def modify(event):
+                def modApp():
+
+                    sql = Load()
+                    sP = S.Even()['values'][-1]
+                    for i in sP.split(','):
+                        sql.run("delete from %s where project='%s'" %(table2,i))
+                    sql.run("update %s set Project='%s' where IP='%s';" \
+                            %(table,project.get(),M.Even()['values'][0]))
+                    m = project.get().split(',')
+                    n = app.get().split('.')
+                    c = zip(m,n)
+                    for i in c:
+                        sql.run("insert into %s(project,app) values ('%s','%s')" \
+                                %(table2,i[0],i[1]))
+                    S.clear()
+                    for i in project.get().split(','):
+                        p = sql.run("select * from %s where project='%s';" %(table2,i))
+                        for j in p:
+                            S.insert(j)
+                    a = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
+                  system_kide,machine,memory,shell,kernel,pkg_message,\
+                  python_version,Project from l_host;")
+                    M.clear()
+                    for d in a:
+                        M.insert(d)
+                    sql.close()
+
+
+                O = gui()
+                O.Lable('Project',5,0)
+                project = O.Entry(5,1)
+                O.Lable('App',10,0)
+                app = O.Entry(10,1)
+                O.Button('OK',modApp,15,1)
+                O.loop()
             sql = Load()
             a = M.Even()['values'][-1]
             S = gui('Project')
-            S.treeview(('Project',100),('App',200),ipady=87)
+            S.treeview(('Project',100),('App',200),ipady=87,Eve=modify)
             for i in a.split(','):
                 appname = sql.run("select * from %s where project='%s'"\
                                   %(table2,i))

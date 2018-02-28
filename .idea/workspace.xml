@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d866423-9a8a-4b90-8f07-fd6f44a9d534" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/modules/ci.json" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/assetsManagement.py" afterPath="$PROJECT_DIR$/assetsManagement.py" />
       <change beforePath="$PROJECT_DIR$/deployGui.py" afterPath="$PROJECT_DIR$/deployGui.py" />
-      <change beforePath="$PROJECT_DIR$/modules/GuiApi.py" afterPath="$PROJECT_DIR$/modules/GuiApi.py" />
-      <change beforePath="$PROJECT_DIR$/modules/deploy.py" afterPath="$PROJECT_DIR$/modules/deploy.py" />
-      <change beforePath="$PROJECT_DIR$/test.py" afterPath="$PROJECT_DIR$/test.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +15,8 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Lookat$ansible_api.coverage" NAME="ansible_api Coverage Results" MODIFIED="1519629462130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/Lookat$test3.coverage" NAME="test3 Coverage Results" MODIFIED="1518619878318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Lookat$assetsManagement.coverage" NAME="assetsManagement Coverage Results" MODIFIED="1517998652497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Lookat$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1519790260630" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lookat$assetsManagement.coverage" NAME="assetsManagement Coverage Results" MODIFIED="1519813987574" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lookat$GUI.coverage" NAME="GUI Coverage Results" MODIFIED="1519813995300" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lookat$test1.coverage" NAME="test1 Coverage Results" MODIFIED="1518655656105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lookat$first.coverage" NAME="first Coverage Results" MODIFIED="1516438971496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lookat$login.coverage" NAME="login Coverage Results" MODIFIED="1517561913235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -32,7 +27,7 @@
     <SUITE FILE_PATH="coverage/Lookat$sshapi.coverage" NAME="sshapi Coverage Results" MODIFIED="1517969248296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/Lookat$GuiApi.coverage" NAME="GuiApi Coverage Results" MODIFIED="1517992484868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/Lookat$test2__1_.coverage" NAME="test2 (1) Coverage Results" MODIFIED="1518058183882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
-    <SUITE FILE_PATH="coverage/Lookat$deployGui.coverage" NAME="deployGui Coverage Results" MODIFIED="1519809064457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Lookat$deployGui.coverage" NAME="deployGui Coverage Results" MODIFIED="1519811044318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lookat$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1518148905866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Lookat$test.coverage" NAME="test Coverage Results" MODIFIED="1519808120380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -56,7 +51,7 @@
       <file leaf-file-name="GuiApi.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/GuiApi.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-686">
+            <state relative-caret-position="313">
               <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
               <folding>
                 <element signature="e#180#201#0" expanded="true" />
@@ -65,17 +60,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deployGui.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deployGui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/deployGui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+            <state relative-caret-position="390">
+              <caret line="93" column="1" lean-forward="false" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
               <folding>
                 <element signature="e#182#212#0" expanded="true" />
-                <marker date="1519809263057" expanded="true" signature="664:716" ph="insert into %s... " />
-                <marker date="1519809263057" expanded="true" signature="664:736" ph="insert into %s... " />
-                <marker date="1519809263057" expanded="true" signature="1017:1031" ph="select * fro... missing_value" />
-                <marker date="1519809263057" expanded="true" signature="1017:1033" ph="select * fro... %s" />
+                <marker date="1519811343321" expanded="true" signature="664:716" ph="insert into %s... " />
+                <marker date="1519811343321" expanded="true" signature="664:736" ph="insert into %s... " />
+                <marker date="1519811343321" expanded="true" signature="1036:1066" ph="delete from %s... " />
+                <marker date="1519811343321" expanded="true" signature="1036:1067" ph="delete from missing_value... " />
+                <marker date="1519811343321" expanded="true" signature="1125:1139" ph="select * fro... missing_value" />
+                <marker date="1519811343321" expanded="true" signature="1442:1456" ph="select * fro... missing_value" />
+                <marker date="1519811343321" expanded="true" signature="1442:1458" ph="select * fro... %s" />
               </folding>
             </state>
           </provider>
@@ -124,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GUI.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GUI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="84">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -149,39 +147,49 @@
       <file leaf-file-name="assetsManagement.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assetsManagement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
               <folding>
                 <element signature="e#190#220#0" expanded="true" />
-                <marker date="1519790027366" expanded="true" signature="765:841" ph="insert into l_host... " />
-                <marker date="1519790027366" expanded="true" signature="765:882" ph="insert into l_host... " />
-                <marker date="1519790027366" expanded="true" signature="765:887" ph="insert into l_host... " />
-                <marker date="1519790027366" expanded="true" signature="1321:1359" ph="update l_host... " />
-                <marker date="1519790027366" expanded="true" signature="1489:1530" ph="update l_host... " />
-                <marker date="1519790027366" expanded="true" signature="1659:1699" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="1885:2063" ph="select hostn... l_host" />
-                <marker date="1519790027366" expanded="true" signature="1885:2066" ph="select hostn... l_host" />
-                <marker date="1519790027366" expanded="true" signature="1885:2067" ph="select hostn... l_host" />
-                <marker date="1519790027366" expanded="true" signature="2660:2698" ph="select IP,ss... l_host" />
-                <marker date="1519790027366" expanded="true" signature="3328:3351" ph="update missing_value... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3354" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3356" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3368" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3372" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3377" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3379" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3494" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3495" ph="update missing_value... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3497" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="3328:3498" ph="update missing_value... " />
-                <marker date="1519790027366" expanded="true" signature="3712:3884" ph="select IP,ss... l_host" />
-                <marker date="1519790027366" expanded="true" signature="4223:4258" ph="select * fro... missing_value" />
-                <marker date="1519790027366" expanded="true" signature="4933:5105" ph="select IP,ss... l_host" />
-                <marker date="1519790027366" expanded="true" signature="6285:6331" ph="insert into %s... " />
-                <marker date="1519790027366" expanded="true" signature="6613:6650" ph="update missing_value... " />
-                <marker date="1519790027366" expanded="true" signature="6613:6652" ph="update %s... " />
-                <marker date="1519790027366" expanded="true" signature="6824:6838" ph="select * fro... missing_value" />
-                <marker date="1519790027366" expanded="true" signature="6824:6840" ph="select * fro... %s" />
+                <marker date="1519813821244" expanded="true" signature="765:841" ph="insert into l_host... " />
+                <marker date="1519813821244" expanded="true" signature="765:882" ph="insert into l_host... " />
+                <marker date="1519813821244" expanded="true" signature="765:887" ph="insert into l_host... " />
+                <marker date="1519813821244" expanded="true" signature="1321:1359" ph="update l_host... " />
+                <marker date="1519813821244" expanded="true" signature="1489:1530" ph="update l_host... " />
+                <marker date="1519813821244" expanded="true" signature="1659:1699" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="1885:2063" ph="select hostn... l_host" />
+                <marker date="1519813821244" expanded="true" signature="1885:2066" ph="select hostn... l_host" />
+                <marker date="1519813821244" expanded="true" signature="1885:2067" ph="select hostn... l_host" />
+                <marker date="1519813821244" expanded="true" signature="2660:2698" ph="select IP,ss... l_host" />
+                <marker date="1519813821244" expanded="true" signature="3328:3351" ph="update missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3354" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3356" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3368" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3372" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3377" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3379" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3494" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3495" ph="update missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3497" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="3328:3498" ph="update missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="3712:3884" ph="select IP,ss... l_host" />
+                <marker date="1519813821244" expanded="true" signature="4217:4247" ph="delete from missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="4217:4249" ph="delete from %s... " />
+                <marker date="1519813821244" expanded="true" signature="4217:4250" ph="delete from missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="4294:4320" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="4294:4330" ph="update missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="4294:4334" ph="update missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="4605:4651" ph="insert into %s... " />
+                <marker date="1519813821244" expanded="true" signature="4830:4861" ph="select * fro... missing_value" />
+                <marker date="1519813821244" expanded="true" signature="4830:4865" ph="select * fro... missing_value" />
+                <marker date="1519813821244" expanded="true" signature="4990:5162" ph="select IP,ss... l_host" />
+                <marker date="1519813821244" expanded="true" signature="5779:5814" ph="select * fro... missing_value" />
+                <marker date="1519813821244" expanded="true" signature="6489:6661" ph="select IP,ss... l_host" />
+                <marker date="1519813821244" expanded="true" signature="7841:7887" ph="insert into %s... " />
+                <marker date="1519813821244" expanded="true" signature="8169:8206" ph="update missing_value... " />
+                <marker date="1519813821244" expanded="true" signature="8169:8208" ph="update %s... " />
+                <marker date="1519813821244" expanded="true" signature="8380:8394" ph="select * fro... missing_value" />
+                <marker date="1519813821244" expanded="true" signature="8380:8396" ph="select * fro... %s" />
               </folding>
             </state>
           </provider>
@@ -238,9 +246,9 @@
         <option value="$PROJECT_DIR$/modules/databaseLoad.py" />
         <option value="$PROJECT_DIR$/modules/deploy.py" />
         <option value="$PROJECT_DIR$/modules/GuiApi.py" />
-        <option value="$PROJECT_DIR$/assetsManagement.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/deployGui.py" />
+        <option value="$PROJECT_DIR$/assetsManagement.py" />
       </list>
     </option>
   </component>
@@ -320,7 +328,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.deployGui">
+  <component name="RunManager" selected="Python.GUI">
     <configuration name="GUI" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -335,6 +343,25 @@
       <module name="Lookat" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GUI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="assetsManagement" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Lookat" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/assetsManagement.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -397,39 +424,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test4" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Lookat" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test4.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.GUI" />
       <item index="1" class="java.lang.String" itemvalue="Python.test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test4" />
-      <item index="3" class="java.lang.String" itemvalue="Python.deploy" />
-      <item index="4" class="java.lang.String" itemvalue="Python.deployGui" />
+      <item index="2" class="java.lang.String" itemvalue="Python.deploy" />
+      <item index="3" class="java.lang.String" itemvalue="Python.deployGui" />
+      <item index="4" class="java.lang.String" itemvalue="Python.assetsManagement" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.deployGui" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test" />
-        <item index="2" class="java.lang.String" itemvalue="Python.deploy" />
-        <item index="3" class="java.lang.String" itemvalue="Python.GUI" />
-        <item index="4" class="java.lang.String" itemvalue="Python.test4" />
+        <item index="0" class="java.lang.String" itemvalue="Python.GUI" />
+        <item index="1" class="java.lang.String" itemvalue="Python.assetsManagement" />
+        <item index="2" class="java.lang.String" itemvalue="Python.deployGui" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test" />
+        <item index="4" class="java.lang.String" itemvalue="Python.deploy" />
       </list>
     </recent_temporary>
   </component>
@@ -863,14 +871,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/ci.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -928,48 +928,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assetsManagement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="211" column="0" lean-forward="false" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
-          <folding>
-            <element signature="e#190#220#0" expanded="true" />
-            <marker date="1519790027366" expanded="true" signature="765:841" ph="insert into l_host... " />
-            <marker date="1519790027366" expanded="true" signature="765:882" ph="insert into l_host... " />
-            <marker date="1519790027366" expanded="true" signature="765:887" ph="insert into l_host... " />
-            <marker date="1519790027366" expanded="true" signature="1321:1359" ph="update l_host... " />
-            <marker date="1519790027366" expanded="true" signature="1489:1530" ph="update l_host... " />
-            <marker date="1519790027366" expanded="true" signature="1659:1699" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="1885:2063" ph="select hostn... l_host" />
-            <marker date="1519790027366" expanded="true" signature="1885:2066" ph="select hostn... l_host" />
-            <marker date="1519790027366" expanded="true" signature="1885:2067" ph="select hostn... l_host" />
-            <marker date="1519790027366" expanded="true" signature="2660:2698" ph="select IP,ss... l_host" />
-            <marker date="1519790027366" expanded="true" signature="3328:3351" ph="update missing_value... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3354" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3356" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3368" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3372" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3377" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3379" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3494" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3495" ph="update missing_value... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3497" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="3328:3498" ph="update missing_value... " />
-            <marker date="1519790027366" expanded="true" signature="3712:3884" ph="select IP,ss... l_host" />
-            <marker date="1519790027366" expanded="true" signature="4223:4258" ph="select * fro... missing_value" />
-            <marker date="1519790027366" expanded="true" signature="4933:5105" ph="select IP,ss... l_host" />
-            <marker date="1519790027366" expanded="true" signature="6285:6331" ph="insert into %s... " />
-            <marker date="1519790027366" expanded="true" signature="6613:6650" ph="update missing_value... " />
-            <marker date="1519790027366" expanded="true" signature="6613:6652" ph="update %s... " />
-            <marker date="1519790027366" expanded="true" signature="6824:6838" ph="select * fro... missing_value" />
-            <marker date="1519790027366" expanded="true" signature="6824:6840" ph="select * fro... %s" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/modules/GuiApi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-686">
+        <state relative-caret-position="313">
           <caret line="86" column="26" lean-forward="false" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
           <folding>
             <element signature="e#180#201#0" expanded="true" />
@@ -979,15 +940,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deployGui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="35" column="34" lean-forward="false" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        <state relative-caret-position="390">
+          <caret line="93" column="1" lean-forward="false" selection-start-line="93" selection-start-column="1" selection-end-line="93" selection-end-column="1" />
           <folding>
             <element signature="e#182#212#0" expanded="true" />
-            <marker date="1519809263057" expanded="true" signature="664:716" ph="insert into %s... " />
-            <marker date="1519809263057" expanded="true" signature="664:736" ph="insert into %s... " />
-            <marker date="1519809263057" expanded="true" signature="1017:1031" ph="select * fro... missing_value" />
-            <marker date="1519809263057" expanded="true" signature="1017:1033" ph="select * fro... %s" />
+            <marker date="1519811343321" expanded="true" signature="664:716" ph="insert into %s... " />
+            <marker date="1519811343321" expanded="true" signature="664:736" ph="insert into %s... " />
+            <marker date="1519811343321" expanded="true" signature="1036:1066" ph="delete from %s... " />
+            <marker date="1519811343321" expanded="true" signature="1036:1067" ph="delete from missing_value... " />
+            <marker date="1519811343321" expanded="true" signature="1125:1139" ph="select * fro... missing_value" />
+            <marker date="1519811343321" expanded="true" signature="1442:1456" ph="select * fro... missing_value" />
+            <marker date="1519811343321" expanded="true" signature="1442:1458" ph="select * fro... %s" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assetsManagement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="105" selection-start-column="32" selection-end-line="105" selection-end-column="32" />
+          <folding>
+            <element signature="e#190#220#0" expanded="true" />
+            <marker date="1519813821244" expanded="true" signature="765:841" ph="insert into l_host... " />
+            <marker date="1519813821244" expanded="true" signature="765:882" ph="insert into l_host... " />
+            <marker date="1519813821244" expanded="true" signature="765:887" ph="insert into l_host... " />
+            <marker date="1519813821244" expanded="true" signature="1321:1359" ph="update l_host... " />
+            <marker date="1519813821244" expanded="true" signature="1489:1530" ph="update l_host... " />
+            <marker date="1519813821244" expanded="true" signature="1659:1699" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="1885:2063" ph="select hostn... l_host" />
+            <marker date="1519813821244" expanded="true" signature="1885:2066" ph="select hostn... l_host" />
+            <marker date="1519813821244" expanded="true" signature="1885:2067" ph="select hostn... l_host" />
+            <marker date="1519813821244" expanded="true" signature="2660:2698" ph="select IP,ss... l_host" />
+            <marker date="1519813821244" expanded="true" signature="3328:3351" ph="update missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3354" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3356" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3368" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3372" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3377" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3379" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3494" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3495" ph="update missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3497" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="3328:3498" ph="update missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="3712:3884" ph="select IP,ss... l_host" />
+            <marker date="1519813821244" expanded="true" signature="4217:4247" ph="delete from missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="4217:4249" ph="delete from %s... " />
+            <marker date="1519813821244" expanded="true" signature="4217:4250" ph="delete from missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="4294:4320" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="4294:4330" ph="update missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="4294:4334" ph="update missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="4605:4651" ph="insert into %s... " />
+            <marker date="1519813821244" expanded="true" signature="4830:4861" ph="select * fro... missing_value" />
+            <marker date="1519813821244" expanded="true" signature="4830:4865" ph="select * fro... missing_value" />
+            <marker date="1519813821244" expanded="true" signature="4990:5162" ph="select IP,ss... l_host" />
+            <marker date="1519813821244" expanded="true" signature="5779:5814" ph="select * fro... missing_value" />
+            <marker date="1519813821244" expanded="true" signature="6489:6661" ph="select IP,ss... l_host" />
+            <marker date="1519813821244" expanded="true" signature="7841:7887" ph="insert into %s... " />
+            <marker date="1519813821244" expanded="true" signature="8169:8206" ph="update missing_value... " />
+            <marker date="1519813821244" expanded="true" signature="8169:8208" ph="update %s... " />
+            <marker date="1519813821244" expanded="true" signature="8380:8394" ph="select * fro... missing_value" />
+            <marker date="1519813821244" expanded="true" signature="8380:8396" ph="select * fro... %s" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

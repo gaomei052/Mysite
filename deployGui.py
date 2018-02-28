@@ -32,13 +32,23 @@ def Deploy():
             sql.close()
         def ShowGit():
             def gCheck(event):
+                def gCom():
+                    data = S.Even()['values'][1]
+                    sql = Load()
+                    sql.run("delete from %s where token='%s';" %(table1,data))
+                    gitdata = sql.run("select * from %s;" %table1)
+                    S.clear()
+                    for i in gitdata:
+                        S.insert(i)
+                    sql.close()
                 L = gui('...')
-                L.Button('Delect',)
+                L.Button('Delect',gCom,5,0)
+                L.loop()
 
             sql = Load()
             git = sql.run("select * from %s;" %table1)
             S = gui("GIT")
-            S.treeview(('Address',200),('Token',200),('User',50),('Password',100),ipady=87,Evn=gCheck)
+            S.treeview(('Address',200),('Token',200),('User',50),('Password',100),ipady=87,Eve=gCheck)
             for i in git:
                 S.insert(i)
             S.loop()
@@ -73,12 +83,12 @@ def Deploy():
     G = gui('Deploy')
     G.Lable('Project',5,0)
     ProName = G.combobox(5,1,width=24,values=name,default=1)
-
-
     G.Lable('App',10,0)
     AppName = G.combobox(10,1,width=24,key='<Button-1>',fun=getApp,values=appList)
+    G.Lable('Branch',14,0)
+    branch = G.combobox(14,values=[])
     G.Button('CodeMessage',codeMessage,15,0)
     G.Button('OK',OK,15,1)
     G.loop()
 
-Deploy()
+#Deploy()
