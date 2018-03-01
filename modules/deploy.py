@@ -10,6 +10,10 @@
 
 from modules.sshapi import ssh
 from modules.databaseLoad import Load
+from modules.judgeMiddle import judge
+from modules.getProHost import getHost
+from modules.getGitData import Git
+
 
 table = 'l_project'
 
@@ -58,6 +62,18 @@ class DeployProject:
 
     def app(self,project):
         return self.dict[project]
+
+    def DepPro(self,project,app,branch,tag=None):
+        if judge('./ci.json'):
+            pass
+        else:
+            IP,password,port = getHost(project)
+            Gadd,Gtoken,Guser,Gpassword = Git().getGit()
+            url = Git().getData(project)['url']
+
+
+
+
 
 
 #print DeployProject().dict

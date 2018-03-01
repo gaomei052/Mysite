@@ -59,7 +59,7 @@ def asset():
             M = gui('Host List')
             M.treeview(('IP', 100), ('Port', 30),('HostName',100),('CPU_count',70),('CPU_core',70),('System_Kide',90),\
                    ('machine',70),('Memory',50),('shell',80),('kernel',150),('pkg_Message','90'),\
-                   ('python_Version',90),('Project',150),ipady=87)
+                   ('python_Version',90),('Project',200),ipady=87)
             sql = Load()
             sql.close()
             for i in host:
@@ -129,7 +129,7 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
                     sql.close()
 
 
-                O = gui()
+                O = gui("ModApp")
                 O.Lable('Project',5,0)
                 project = O.Entry(5,1)
                 O.Lable('App',10,0)
@@ -139,7 +139,7 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
             sql = Load()
             a = M.Even()['values'][-1]
             S = gui('Project')
-            S.treeview(('Project',100),('App',200),ipady=87,Eve=modify)
+            S.treeview(('Project',150),('App',250),ipady=87,Eve=modify)
             for i in a.split(','):
                 appname = sql.run("select * from %s where project='%s'"\
                                   %(table2,i))
@@ -154,7 +154,7 @@ python_version="%s" where IP="%s"' %(table,hostname,cpu_count,cpu_core,system_ki
         M.Button('Update',update,2,0,width=30)
         M.treeview(('IP', 100), ('Port', 30),('HostName',100),('CPU_count',70),('CPU_core',70),('System_Kide',90),\
                    ('machine',70),('Memory',50),('shell',80),('kernel',150),('pkg_Message','90'),\
-                   ('python_Version',90),('Project',150),ipady=87,Eve=cod)
+                   ('python_Version',90),('Project',200),ipady=87,Eve=cod)
         sql = Load()
         hostname = sql.run("select IP,sshport,hostname,cpu_count,cpu_core,\
                   system_kide,machine,memory,shell,kernel,pkg_message,\

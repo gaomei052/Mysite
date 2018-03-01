@@ -84,6 +84,8 @@ class gui(object):
 
         return data
 
+
+
     def values(self,values):
         self.com['values'] = values
 
