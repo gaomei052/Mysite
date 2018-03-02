@@ -28,6 +28,7 @@ def Deploy():
     def codeMessage():
         def OKGit():
             sql = Load()
+            sql.run("delect from %s" % table1)
             sql.run("insert into %s(Address,Token,user,password) values ('%s','%s','%s','%s')" \
                     %(table1,add.get(),token.get(),user.get(),password.get()))
             sql.close()

@@ -16,23 +16,23 @@ import tkMessageBox
 
 class gui(object):
     def __init__(self, name=None):
-        self.top = Tk()
+        self._top = Tk()
         if name:
-            self.top.title(name)
-        self.screen_width = self.top.winfo_screenwidth()
-        self.screen_height = self.top.winfo_screenheight() - 200
-        self.frame = Frame(self.top)
+            self._top.title(name)
+        self._screen_width = self._top.winfo_screenwidth()
+        self._screen_height = self._top.winfo_screenheight() - 200
+        self._frame = Frame(self._top)
 
 
 
     def Button(self, name, command, row, column, width=None, height=None, columnspan=None):
-        B = Button(self.top, text=name, command=command)
+        B = Button(self._top, text=name, command=command)
         if height and width:
-            B = Button(self.top, text=name, command=command, width=width, height=height)
+            B = Button(self._top, text=name, command=command, width=width, height=height)
         if width:
-            B = Button(self.top, text=name, command=command, width=width)
+            B = Button(self._top, text=name, command=command, width=width)
         if height:
-            B = Button(self.top, text=name, command=command, height=height)
+            B = Button(self._top, text=name, command=command, height=height)
 
         if columnspan:
             B.grid(row=row, column=column, columnspan=columnspan)
@@ -41,7 +41,7 @@ class gui(object):
         return B
 
     def Lable(self, name, row, column, columnspan=None, ipadx=None):
-        L = Label(self.top, text=name)
+        L = Label(self._top, text=name)
         if columnspan:
             L.grid(row=row, column=column)
         else:
@@ -51,8 +51,8 @@ class gui(object):
         return L
 
     def Entry(self, row, column, show=None, default=None, columnspan=None, key=None, fun=None, ipadx=None):
-        self.V = StringVar(self.top)
-        E = Entry(self.top, textvariable=self.V)
+        self._V = StringVar(self._top)
+        E = Entry(self._top, textvariable=self._V)
         if columnspan:
             E.grid(row=row, column=column)
         else:
@@ -62,32 +62,32 @@ class gui(object):
         if show:
             E['show'] = show
         if default:
-            self.V.set(default)
+            self._V.set(default)
         if key and not fun:
             pass
         if fun and not key:
             pass
         if key and fun:
             E.bind(key, fun)
-        return self.V
+        return self._V
 
     def combobox(self,row,column,width=None,values=None,key=None,fun=None,default=None):
         width = width or 20
         values = values or ''
-        data = StringVar(self.top)
-        self.com = ttk.Combobox(self.top,width=width,textvariable=data)
-        self.com.grid(row=row,column=column)
+        data = StringVar(self._top)
+        self._com = ttk.Combobox(self._top,width=width,textvariable=data)
+        self._com.grid(row=row,column=column)
         if key and fun:
-            self.com.bind(key,fun)
-        self.com['values'] = values
-        self.com.current(default)
+            self._com.bind(key,fun)
+        self._com['values'] = values
+        self._com.current(default)
 
         return data
 
 
 
     def values(self,values):
-        self.com['values'] = values
+        self._com['values'] = values
 
 
 
@@ -100,8 +100,8 @@ class gui(object):
 
 
     def treeview(self,*args, **kwargs):
-        self.frame.grid()
-        scrollBar = Scrollbar(self.frame)
+        self._frame.grid()
+        scrollBar = Scrollbar(self._frame)
         if 'ipady' in kwargs.keys():
             h = kwargs['ipady']
         else:
@@ -112,8 +112,8 @@ class gui(object):
         for i in range(len(args)):
             mid.append('c' + str(i))
         midtuple = tuple(mid)
-        self.treeview = Treeview(
-            self.frame,
+        self._treeview = Treeview(
+            self._frame,
             columns=midtuple,
             show='headings',
             yscrollcommand=scrollBar.set
@@ -123,7 +123,7 @@ class gui(object):
 
         def a():
             try:
-                self.treeview.column(f.next(), width=e.next()[1], anchor='center')
+                self._treeview.column(f.next(), width=e.next()[1], anchor='center')
                 return a()
             except:
                 return
@@ -134,43 +134,43 @@ class gui(object):
 
         def s():
             try:
-                self.treeview.heading(m.next(), text=n.next()[0])
+                self._treeview.heading(m.next(), text=n.next()[0])
                 return s()
             except:
                 return
 
         s()
-        self.treeview.grid(row=10,column=0, sticky=W, rowspan=10)
-        scrollBar.config(command=self.treeview.yview)
+        self._treeview.grid(row=10,column=0, sticky=W, rowspan=10)
+        scrollBar.config(command=self._treeview.yview)
 
         if 'Eve' in kwargs.keys():
-            self.treeview.bind('<Double-Button-1>',kwargs['Eve'])
+            self._treeview.bind('<Double-Button-1>',kwargs['Eve'])
 
 
     def Even(self):
-        a = self.treeview.focus()
-        return self.treeview.item(a)
+        a = self._treeview.focus()
+        return self._treeview.item(a)
 
     def insert(self, *args):
         for i in args:
-            self.treeview.insert('', 0, values=i)
+            self._treeview.insert('', 0, values=i)
 
     def clear(self):
-        items = self.treeview.get_children()
-        [self.treeview.delete(item) for item in items]
+        items = self._treeview.get_children()
+        [self._treeview.delete(item) for item in items]
 
 
     def loop(self, master=None):
         if master:
-            self.top = master
-        self.top.update_idletasks()
-        self.top.deiconify()
-        self.top.withdraw()
-        w = self.top.winfo_width()
-        h = self.top.winfo_height()
-        self.top.geometry('%sx%s+%s+%s' % (w, h, (self.screen_width - w) / 2, \
-                                           (self.screen_height - h) / 2))
+            self._top = master
+        self._top.update_idletasks()
+        self._top.deiconify()
+        self._top.withdraw()
+        w = self._top.winfo_width()
+        h = self._top.winfo_height()
+        self._top.geometry('%sx%s+%s+%s' % (w, h, (self._screen_width - w) / 2, \
+                                           (self._screen_height - h) / 2))
 
-        self.top.deiconify()
-        # Frame(self.top,height=5).grid()
-        self.top.mainloop()
+        self._top.deiconify()
+        # Frame(self._top,height=5).grid()
+        self._top.mainloop()
